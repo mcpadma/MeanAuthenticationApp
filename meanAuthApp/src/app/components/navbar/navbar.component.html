@@ -1,0 +1,17 @@
+<!--<p>
+  navbar works!
+</p>-->
+
+<div class = "container">
+  <nav class ="nav navbar navbar-inverse">
+    <ul style="list-style-type: none;">
+      <li *ngIf = "authService.loggedIn()" ><a [routerLink]= "['/dashboard']">Dashboard</a></li>
+      <li  *ngIf = "authService.loggedIn()" ><a [routerLink]= "['/profile']">Profile</a></li>
+      <li  *ngIf = "authService.loggedIn()" ><a href = "#" (click) = "onLogoutClick()">Logout</a></li>
+      
+      <li *ngIf = "!authService.loggedIn()"><a [routerLink]= "['/login']">Login</a></li>
+      <li *ngIf = "!authService.loggedIn()"><a [routerLink]= "['/register']">Register</a></li>
+      
+    </ul>
+  </nav>
+</div>
